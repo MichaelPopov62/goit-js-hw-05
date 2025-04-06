@@ -2,21 +2,19 @@
 
 // створюю функцію стрілочну
 const getTotalBalanceByGender = (users, gender) => {
-    
-// отримую масив, перепровіряю  
-  console.log(users);
 
-/* методом фильтрую користівачів згідно умови Змінну створюю для розуміння ланцюга,та можливості тестувати*/
-  const filteradUser = users.filter((user) => user.gender === gender);
+// повертаю значення
+  return users
+
+// методом фильтрую користівачів згідно умови
+  
+  .filter(user => user.gender === gender)
 
 //методом додаю значення всіх єлементів в один результат
-  const totalBalanse = filteradUser.reduce(
-    (total, user) => total + user.balance,
-    0
-  );
-  // повертаю значення
-  return totalBalanse;
-} 
+  .reduce((total, user) => total + user.balance, 0);
+ 
+};
+
 
 // перевіряю
 
