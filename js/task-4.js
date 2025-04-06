@@ -1,19 +1,16 @@
 'use strict'
 
 // створюю функцію стрілочну
-const getTotalBalanceByGender = (users, gender) => {
+const getTotalBalanceByGender = (users, gender) =>
 
-// повертаю значення
-  return users
+  // методом фильтрую користівачів згідно умови
+  //методом додаю значення всіх єлементів в один результат
 
-// методом фильтрую користівачів згідно умови
-  
-  .filter(user => user.gender === gender)
+  users
+    .filter(user => user.gender === gender)
+    .reduce((total, user) => total + user.balance, 0);
 
-//методом додаю значення всіх єлементів в один результат
-  .reduce((total, user) => total + user.balance, 0);
- 
-};
+
 
 
 // перевіряю
